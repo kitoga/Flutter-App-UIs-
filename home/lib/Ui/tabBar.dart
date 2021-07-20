@@ -22,6 +22,168 @@ class TabWidget extends StatelessWidget {
                   ContinerWidget(),
                 ],
               ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 30.0),
+              child: Text(
+                'Latest Popular',
+                style: GoogleFonts.openSans(
+                  fontSize: 18,
+                  color: Colors.grey.shade700,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 15.0),
+                child: Row(
+                  children: [
+                    LastestCategoriesWidget(),
+                    LastestCategoriesWidget(),
+                    LastestCategoriesWidget(),
+                    LastestCategoriesWidget(),
+                    LastestCategoriesWidget(),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class LastestCategoriesWidget extends StatelessWidget {
+  const LastestCategoriesWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 15.0, bottom: 10, top: 10),
+      child: Container(
+        height: MediaQuery.of(context).size.height / 3.6,
+        width: MediaQuery.of(context).size.width / 2.6,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.shade200,
+              spreadRadius: 3.0,
+              blurRadius: 5,
+              offset: Offset(0, 2), // changes position of shadow
+            ),
+          ],
+        ),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 5.0),
+              child: Container(
+                height: MediaQuery.of(context).size.height / 5.2,
+                width: MediaQuery.of(context).size.width / 2.9,
+                decoration: BoxDecoration(
+                  color: Colors.amber,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 10, 0, 10),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 30,
+                        width: 70,
+                        decoration: BoxDecoration(
+                            color: Color(0xff212121),
+                            borderRadius: BorderRadius.circular(15)),
+                        child: Center(
+                          child: Text(
+                            "Standard",
+                            style: GoogleFonts.openSans(
+                              fontSize: 10,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xffffffff),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: 25,
+                        width: 45,
+                        decoration: BoxDecoration(
+                            color: Color(0xffffffff),
+                            borderRadius: BorderRadius.circular(15)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.star,
+                              size: 20,
+                              color: Colors.yellow[400],
+                            ),
+                            Text(
+                              "4.5",
+                              style: GoogleFonts.openSans(
+                                fontSize: 10,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black45,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              "Beach Hotel California",
+              style: GoogleFonts.openSans(
+                fontSize: 11.5,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            SizedBox(
+              height: 2,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 18.0),
+              child: Row(
+                children: [
+                  Text(
+                    "\$170",
+                    style: GoogleFonts.openSans(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff212121),
+                    ),
+                  ),
+                  Text(
+                    '/Night',
+                    style: GoogleFonts.openSans(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w300,
+                      color: Color(0xff212121),
+                    ),
+                  ),
+                ],
+              ),
             )
           ],
         ),
@@ -48,8 +210,8 @@ class ContinerWidget extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: Colors.grey.shade200,
-              spreadRadius: 5,
-              blurRadius: 8,
+              spreadRadius: 0,
+              blurRadius: 10,
               offset: Offset(0, 5), // changes position of shadow
             ),
           ],
