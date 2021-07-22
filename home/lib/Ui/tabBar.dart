@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:home/Ui/hotel_list.dart';
+import 'package:home/model/model.dart';
 
 class TabWidget extends StatelessWidget {
   const TabWidget({Key? key}) : super(key: key);
@@ -193,10 +195,6 @@ class LastestCategoriesWidget extends StatelessWidget {
 }
 
 class ContinerWidget extends StatelessWidget {
-  const ContinerWidget({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -227,8 +225,7 @@ class ContinerWidget extends StatelessWidget {
                       bottomLeft: Radius.circular(20)),
                   color: Colors.limeAccent,
                   image: DecorationImage(
-                    image: NetworkImage(
-                        "https://pix8.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?s=1024x768"),
+                    image: NetworkImage(hotelList),
                     fit: BoxFit.cover,
                   )),
             ),
