@@ -1,7 +1,9 @@
-class HouseList {
+import 'package:flutter/cupertino.dart';
+
+class HotelDetails {
   final String img;
   final String hname;
   final String hprice;
 
-  HouseList({required this.img, required this.hname, required this.hprice});
+  HotelDetails({required this.img, required this.hname, required this.hprice});
 }
