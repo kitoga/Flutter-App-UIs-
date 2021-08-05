@@ -13,37 +13,32 @@ class TabWidget extends StatefulWidget {
 class _TabWidgetState extends State<TabWidget> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
+    return SingleChildScrollView(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           PreviewCategory(),
+          SizedBox(
+            height: 5,
+          ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(30, 0, 10, 20),
+            padding: const EdgeInsets.only(left: 30.0, bottom: 10),
             child: Text('Latest Popular',
                 style: GoogleFonts.openSans(
-                  fontSize: 20,
-                  color: Color(0xff212121),
-                )),
+                    fontSize: 18, color: Color(0xff212121))),
           ),
-          LatestCatogories()
+          LatestCatogories(),
         ],
       ),
     );
   }
 }
 
-class IconWidgets extends StatefulWidget {
+class IconWidgets extends StatelessWidget {
   const IconWidgets({
     Key? key,
   }) : super(key: key);
 
-  @override
-  _IconWidgetsState createState() => _IconWidgetsState();
-}
-
-class _IconWidgetsState extends State<IconWidgets> {
   @override
   Widget build(BuildContext context) {
     return Row(

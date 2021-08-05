@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
+// import 'package:get_it/get_it.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:home/model/model.dart';
-import 'package:home/services/hotel_service.dart';
+import 'package:home/services/hotel_service_copy.dart';
+// import 'package:home/model/model.dart';
+// import 'package:home/services/hotel_service.dart';
 
 class LatestCatogories extends StatefulWidget {
   const LatestCatogories({
@@ -14,48 +15,50 @@ class LatestCatogories extends StatefulWidget {
 }
 
 class _LatestCatogoriesState extends State<LatestCatogories> {
-  HotelService get service => GetIt.I<HotelService>();
-  List<HotelDetails> hotel = [];
+  // HotelService get service => GetIt.I<HotelService>();
+  // List<HotelDetails> hotel = [];
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    hotel = service.getHotelDetails();
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   hotel = service.getHotelDetails();
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Padding(
-        padding: const EdgeInsets.only(left: 10.0),
-        child: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: hotel.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 15, 10, 10),
-                    child: Container(
-                      height: MediaQuery.of(context).size.height / 3.5,
-                      width: MediaQuery.of(context).size.width / 2.6,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.shade200,
-                            spreadRadius: 3.0,
-                            blurRadius: 5,
-                            offset: Offset(0, 2), // changes position of shadow
-                          ),
-                        ],
-                      ),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20),
+      child: Container(
+        height: MediaQuery.of(context).size.height / 3.3,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: getAllHotelDetail.length,
+          itemBuilder: (BuildContext context, int index) {
+            final hotel = getAllHotelDetail[index];
+            return Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 5, 10, 10),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height / 3.5,
+                    width: MediaQuery.of(context).size.width / 2.6,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.shade200,
+                          spreadRadius: 3.0,
+                          blurRadius: 5,
+                          offset: Offset(0, 2), // changes position of shadow
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(top: 10.0),
@@ -63,7 +66,9 @@ class _LatestCatogoriesState extends State<LatestCatogories> {
                               height: MediaQuery.of(context).size.height / 5.2,
                               width: MediaQuery.of(context).size.width / 2.9,
                               decoration: BoxDecoration(
-                                color: Colors.amber,
+                                image: DecorationImage(
+                                    image: NetworkImage(hotel.img),
+                                    fit: BoxFit.fill),
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: Padding(
@@ -125,10 +130,10 @@ class _LatestCatogoriesState extends State<LatestCatogories> {
                             ),
                           ),
                           SizedBox(
-                            height: 14,
+                            height: 10,
                           ),
                           Text(
-                            hotel[index].hname,
+                            hotel.hname,
                             style: GoogleFonts.openSans(
                               fontSize: 12,
                               fontWeight: FontWeight.w700,
@@ -137,38 +142,35 @@ class _LatestCatogoriesState extends State<LatestCatogories> {
                           SizedBox(
                             height: 2,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 18.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Text(
-                                  hotel[index].hprice,
-                                  style: GoogleFonts.openSans(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color(0xff212121),
-                                  ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text(
+                                hotel.hprice,
+                                style: GoogleFonts.openSans(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xff212121),
                                 ),
-                                Text(
-                                  '/Night',
-                                  style: GoogleFonts.openSans(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w300,
-                                    color: Color(0xff212121),
-                                  ),
+                              ),
+                              Text(
+                                '/Night',
+                                style: GoogleFonts.openSans(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w300,
+                                  color: Color(0xff212121),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           )
                         ],
                       ),
                     ),
-                  )
-                ],
-              );
-            },
-          ),
+                  ),
+                )
+              ],
+            );
+          },
         ),
       ),
     );

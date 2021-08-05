@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
+// import 'package:get_it/get_it.dart';
 import 'package:home/screens/dashboard.dart';
-import 'package:home/services/hotel_service.dart';
+// import 'package:home/services/hotel_service.dart';
 
-void setupLocator() {
-  GetIt.I.registerLazySingleton(() => HotelService());
-}
+// void setupLocator() {
+//   GetIt.I.registerLazySingleton(() => HotelService());
+// }
 
 void main() {
-  setupLocator();
+  // setupLocator();
   runApp(MyApp());
 }
 
