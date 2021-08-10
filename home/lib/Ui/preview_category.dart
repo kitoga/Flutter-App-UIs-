@@ -22,7 +22,6 @@ class _PreviewCategoryState extends State<PreviewCategory> {
 
   // @override
   // void initState() {
-  //   // TODO: implement initState
   //   hotel = service.getHotelDetails();
   //   super.initState();
   // }

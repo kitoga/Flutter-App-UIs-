@@ -20,7 +20,6 @@ class _LatestCatogoriesState extends State<LatestCatogories> {
 
   // @override
   // void initState() {
-  //   // TODO: implement initState
   //   hotel = service.getHotelDetails();
   //   super.initState();
   // }

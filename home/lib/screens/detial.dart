@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:home/Ui/tabBar.dart';
 import 'package:home/model/Customer_face_model.dart';
 import 'package:home/model/hotel_icon_model.dart';
 import 'package:home/model/model.dart';
 import 'package:home/services/customersface.dart';
 import 'package:home/services/hotel_icons.dart';
-import 'package:home/services/hotel_service.dart';
 
 class DetailPage extends StatelessWidget {
   final HotelDetails hotels;
