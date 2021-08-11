@@ -36,7 +36,7 @@ class DetailPage extends StatelessWidget {
                 color: Color(0xff212121),
               ),
               onPressed: () {}),
-          SizedBox(width: 10),
+          SizedBox(width: 11),
         ],
       ),
       body: Container(
