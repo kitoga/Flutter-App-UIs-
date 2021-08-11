@@ -19,7 +19,7 @@ class LoginWidgetPage extends StatelessWidget {
                       height: MediaQuery.of(context).size.height,
                       width: double.infinity,
                       image: AssetImage(
-                        'assets/images/damir.jpg',
+                        'asset/images.damir.jpg',
                       ),
                       fit: BoxFit.cover,
                     ),
